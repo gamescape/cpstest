@@ -1,0 +1,28 @@
+<html>
+ <head>
+ 
+</head>
+<body>
+<button type="submit" id="click">Click me!</button>
+<p id="cps">Your Score: </p>
+</body>
+<script>
+var cps = 0, clicks = [], monkey = new Image();
+monkey.url = 'http://iruntheinternet.com/lulzdump/images/gifs/monkey-clicking-mouse-computer-ape-YOSPOS-13951992940.gif';
+
+document.getElementById('click').addEventListener('click', function (ev) {
+  ev.preventDefault();
+  clicks.push(Date.now());
+});
+
+function update() {
+  for (var i = 0, c = 0; i < clicks.length; i++) {
+    if (clicks[i] > Date.now() - 1000) {
+      c++;
+    } else {
+      clicks.shift();
+    }
+  }
+  
+  document.getElementById('cps').innerHTML ="Your Score: " + c;
+</script>
