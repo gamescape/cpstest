@@ -7,9 +7,7 @@
 <p id="cps">Your Score: </p>
 </body>
 <script>
-var cps = 0, clicks = [], monkey = new Image();
-monkey.url = 'http://iruntheinternet.com/lulzdump/images/gifs/monkey-clicking-mouse-computer-ape-YOSPOS-13951992940.gif';
-
+var cps = 0, clicks = [];
 document.getElementById('click').addEventListener('click', function (ev) {
   ev.preventDefault();
   clicks.push(Date.now());
